@@ -14,6 +14,7 @@
           <th>First Name</th>
           <th>Last Name</th>
           <th>Email</th>
+          <th>Profile Image</th>
         </tr>
       </thead>
       <tbody>
@@ -22,17 +23,23 @@
           <td>{{ employee.firstName }}</td>
           <td>{{ employee.lastName }}</td>
           <td>{{ employee.emailAddress }}</td>
+          <td>
+            <img
+              [src]="employee.profileImage"
+              alt="profile"
+              [routerLink]="[
+                {
+                  outlets: {
+                    employeeDetails: ['/edit', employee.id]
+                  }
+                }
+              ]"
+            />
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<div class="card mt-4">
-  <div class="card-header">
-    Employee Detials
-  </div>
-  <div class="card-body">
-    <router-outlet name="employeeDetails"></router-outlet>
-  </div>
-</div>
+<router-outlet name="employeeDetails"></router-outlet>

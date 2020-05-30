@@ -7,6 +7,12 @@ import { SharedModule } from '../shared/shared.module';
 
 const EmployeeRoutes: Route[] = [
   { path: 'employees', component: EmployeeListComponent },
+  // { path: 'employees/:id', component: EmployeeDetailsComponent },
+  {
+    path: 'edit',
+    component: EmployeeListComponent,
+    outlet: 'employeeDetails',
+  },
 ];
 
 @NgModule({

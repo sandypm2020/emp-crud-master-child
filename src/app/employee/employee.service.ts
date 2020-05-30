@@ -11,7 +11,9 @@ export class EmployeeService {
   constructor(private http: HttpClient) {}
 
   getEmployees(): Observable<Employee[]> {
-    const getEmpUrl = `${this.baseUrl}/employees`;
+    // const getEmpUrl = `${this.baseUrl}/employees`;
+    const getEmpUrl = `assets/employees.json`;
+
     return this.http.get<Employee[]>(getEmpUrl);
   }
 }
